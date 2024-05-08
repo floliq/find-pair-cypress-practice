@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Игра в пары</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <main class="game">
+      <div class="container">
+        <div class="game__content">
+          <h1 class="game__heading text-center py-3">Найди пару</h1>
+          <div class="game__rules d-flex align-items-center g-3 py-3 flex-wrap">
+            <div class="col-12 col-md-12 col-lg-4 game__part">
+              <p class="game__text">Количество пар:</p>
+              <input
+                id="count"
+                class="game__input"
+                type="number"
+                placeholder="Введите количество пар"
+                value="8"
+                min="2"
+                max="10"
+              />
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 game__part">
+              <p class="game__text">Время на игру:</p>
+              <input
+                id="timer"
+                class="game__input"
+                type="number"
+                placeholder="Введите количество пар"
+                value="60"
+                min="30"
+                max="180"
+              />
+            </div>
+            <div class="col-12 col-md-12 col-lg-4 game__part">
+              <button
+                class="game__start btn btn-success"
+                onclick="createGame()"
+              >
+                Начать игру
+              </button>
+            </div>
+          </div>
+          <div class="game__results d-flex p-3">
+            <h2 class="game__result">Счет: <span class="game__result-score">0</span> Время: <span class="game__result-seconds">0</span></h2>
+          </div>
+
+          <div class="game__cards">
+
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

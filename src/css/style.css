@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+}
+
+.game__text {
+  margin-bottom: 10px;
+}
+
+.game__result {
+  margin-right: 20px;
+}
+
+.game__cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+  grid-gap: 10px;
+}
+
+.game__card {
+  position: relative;
+  cursor: pointer;
+  width: 100%;
+  height: 125px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.game__face,
+.game__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  font-size: 100px;
+  border-radius: 10px;
+
+  user-select: none;
+  backface-visibility: hidden;
+}
+
+.game__face {
+  background-color: rgb(115, 185, 49);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.game__back {
+  background-color: gray;
+  color: white;
+}
+
+.game__card:active {
+  transform: scale(0.97);
+  transition: transform 0.2s;
+}
+
+.game__card.flip {
+  transform: rotateY(180deg);
+}
+
+@media (max-width: 1366px) {
+  .game__card {
+    height: 100px;
+  }
+  .game__face,
+  .game__back {
+    font-size: 70px;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .game__card {
+    height: 70px;
+  }
+  .game__part:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+@media(max-width:576px){
+  .game__card {
+    height: 50px;
+  }
+  .game__face,
+  .game__back {
+    font-size: 50px;
+    border-radius: 10px;
+  }
+}
+
